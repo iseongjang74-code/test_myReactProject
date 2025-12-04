@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { WebsiteCategory } from '../types';
 
 interface HeaderProps {
@@ -41,13 +42,16 @@ const Header: React.FC<HeaderProps> = ({ activeCategory, onCategoryChange }) => 
     <header className="bg-white dark:bg-slate-800 shadow-md sticky top-0 z-10">
       <div className="container mx-auto px-4">
         <div className="py-4 flex justify-between items-center">
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-3">
                 <div className="w-8 h-8 bg-sky-500 rounded-lg flex items-center justify-center">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
                     </svg>
                 </div>
                 <span className="text-xl font-bold text-slate-900 dark:text-white">SiteBuilder</span>
+                <Link to="/" className="ml-3 inline-flex items-center gap-2 px-3 py-1 bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 rounded-md text-sm hover:bg-slate-200 dark:hover:bg-slate-600 transition-colors">
+                  홈으로
+                </Link>
             </div>
             <button onClick={toggleDarkMode} className="p-2 rounded-full text-slate-500 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
                 {isDarkMode ? (

@@ -6,4 +6,5 @@ export interface Website {
   description: string;
   thumbnailUrl: string;
   category: WebsiteCategory;
+  path?: string;
 }
