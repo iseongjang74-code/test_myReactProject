@@ -3,6 +3,7 @@ import { Website, WebsiteCategory } from './types';
 import Header from './components/Header';
 import WebsiteCard from './components/WebsiteCard';
 import CreateWebsiteModal from './components/CreateWebsiteModal';
+import WebsiteDetailModal from './components/WebsiteDetailModal';
 import { PlusIcon } from './components/icons/PlusIcon';
 import Footer from './components/Footer';
 
@@ -39,6 +40,7 @@ const App: React.FC = () => {
   ]);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [activeCategory, setActiveCategory] = useState<'All' | WebsiteCategory>('All');
+  const [selectedWebsite, setSelectedWebsite] = useState<Website | null>(null);
 
   const handleCreateWebsite = useCallback((newWebsiteData: Omit<Website, 'id' | 'thumbnailUrl'>) => {
     setWebsites(prevWebsites => [
@@ -88,6 +90,7 @@ const App: React.FC = () => {
                 key={website.id}
                 website={website}
                 onDelete={handleDeleteWebsite}
+                onSelect={setSelectedWebsite}
               />
             ))}
           </div>
@@ -122,6 +125,10 @@ const App: React.FC = () => {
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
         onCreate={handleCreateWebsite}
+      />
+      <WebsiteDetailModal
+        website={selectedWebsite}
+        onClose={() => setSelectedWebsite(null)}
       />
       <Footer />
     </div>

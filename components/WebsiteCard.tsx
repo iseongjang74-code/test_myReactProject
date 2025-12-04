@@ -8,11 +8,12 @@ import { ExternalLinkIcon } from './icons/ExternalLinkIcon';
 interface WebsiteCardProps {
   website: Website;
   onDelete: (id: number) => void;
+  onSelect: (website: Website) => void;
 }
 
-const WebsiteCard: React.FC<WebsiteCardProps> = ({ website, onDelete }) => {
+const WebsiteCard: React.FC<WebsiteCardProps> = ({ website, onDelete, onSelect }) => {
   return (
-    <div className="bg-white dark:bg-slate-800 rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 ease-in-out flex flex-col">
+    <div className="bg-white dark:bg-slate-800 rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 ease-in-out flex flex-col cursor-pointer" onClick={() => onSelect(website)}>
       <img src={website.thumbnailUrl} alt={website.name} className="w-full h-48 object-cover" />
       <div className="p-6 flex flex-col flex-grow">
         <h3 className="text-xl font-bold mb-2 text-slate-900 dark:text-white">{website.name}</h3>
