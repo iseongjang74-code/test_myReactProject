@@ -1,34 +1,49 @@
 
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Website Builder</title>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI GoNan - 짧게 봐도, 얕아지지 않게</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        darkMode: 'class',
-      }
-    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Pretendard', sans-serif;
+            background-color: #09090b;
+            color: #fafafa;
+            overflow-x: hidden;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .snap-container {
+            scroll-snap-type: y mandatory;
+        }
+        .snap-item {
+            scroll-snap-align: start;
+        }
+    </style>
 
 <link rel="stylesheet" href="/index.css">
-  <script type="importmap">
+<script type="importmap">
 {
   "imports": {
-    "react": "https://aistudiocdn.com/react@^19.2.0",
-    "react/": "https://aistudiocdn.com/react@^19.2.0/",
-    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/"
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.34.0",
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3"
   }
 }
 </script>
-  <script type="module" crossorigin src="/test_myReactProject/assets/index-Ce6skJRY.js"></script>
-  <link rel="modulepreload" crossorigin href="/test_myReactProject/assets/vendor-DnC4bF5A.js">
-  <link rel="modulepreload" crossorigin href="/test_myReactProject/assets/vendor_react-uPswq-Yw.js">
-  <link rel="modulepreload" crossorigin href="/test_myReactProject/assets/vendor_ai-BrvM629u.js">
+  <script type="module" crossorigin src="/test_myReactProject/assets/index-BPeEsUSU.js"></script>
 </head>
-  <body class="bg-slate-100 dark:bg-slate-900">
+<body>
     <div id="root"></div>
-  </body>
+</body>
 </html>
