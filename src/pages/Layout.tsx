@@ -13,6 +13,7 @@ const Layout = () => {
         activeCategory={activeCategory}
         onCategoryChange={setActiveCategory}
       />
+
       <main className="flex-grow">
         <Outlet context={{ activeCategory, setActiveCategory }} />
       </main>

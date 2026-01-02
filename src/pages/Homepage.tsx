@@ -15,36 +15,83 @@ const Homepage: React.FC = () => {
   const [websites, setWebsites] = useState<Website[]>([
     {
       id: 1,
-      name: "My Portfolio",
+      name: "DilemmaSimulator",
       description: "A professional portfolio showcasing my projects and skills in software development.",
       thumbnailUrl: "https://picsum.photos/seed/portfolio/600/400",
       category: 'MBTI',
       path: '/DilemmaSimulator',
     },
-    {
-      id: 2,
-      name: "Travel Blog",
-      description: "Documenting my adventures around the world with photos and stories.",
-      thumbnailUrl: "https://picsum.photos/seed/travel/600/400",
-      category: 'Game',
-      path: '/travel-blog',
-    },
-    {
-      id: 3,
-      name: "Recipe Corner",
-      description: "A collection of my favorite family recipes, from appetizers to desserts.",
-      thumbnailUrl: "https://picsum.photos/seed/recipes/600/400",
-      category: 'MBTI',
-      path: '/recipe-corner',
-    },
-     {
-      id: 4,
-      name: "Gaming Community",
-      description: "A forum for gamers to discuss strategies and new releases.",
+         {
+      id:2,
+      name: "card",
+      description: "A fordddddscuss strategies and new releases.",
       thumbnailUrl: "https://picsum.photos/seed/gaming/600/400",
       category: 'Game',
-      path: '/gaming-community',
+      path: '/myCard',
     },
+{
+      id: 3,
+      name: "gacha",
+      description: "A forum for gamerjjjjjjs to discuss strategies and new releases.",
+      thumbnailUrl: "https://picsum.photos/seed/gaming/600/400",
+      category: 'Game',
+      path: '/gacha',
+    },
+{
+      id: 4,
+      name: "last night",
+      description: "A forum for gaaaaaaamers to discuss strategies and new releases.",
+      thumbnailUrl: "https://picsum.photos/seed/gaming/600/400",
+      category: 'Game',
+      path: '/last_night',
+    },
+      {
+      id: 5,
+      name: "mordern",
+      description: "A forum for gaaaaaaamers to discuss strategies and new releases.",
+      thumbnailUrl: "https://picsum.photos/seed/gaming/600/400",
+      category: 'Game',
+      path: '/mordern',
+    },{
+      id: 6,
+      name: "word",
+      description: "A forum for gaaaaaaamers to discuss strategies and new releases.",
+      thumbnailUrl: "https://picsum.photos/seed/gaming/600/400",
+      category: 'Game',
+      path: '/word',
+    },{
+      id: 7,
+      name: "word2",
+      description: "A forum for gaaaaaaamers to discuss strategies and new releases.",
+      thumbnailUrl: "https://picsum.photos/seed/gaming/600/400",
+      category: 'Game',
+      path: '/word2',
+    },{
+      id: 8,
+      name: "click war",
+      description: "A forum for gaaaaaaamers to discuss strategies and new releases.",
+      thumbnailUrl: "https://picsum.photos/seed/gaming/600/400",
+      category: 'Game',
+      path: '/click_war',
+    },{
+      id: 9,
+      name: "friend",
+      description: "A forum for gaaaaaaamers to discuss strategies and new releases.",
+      thumbnailUrl: "https://picsum.photos/seed/gaming/600/400",
+      category: 'Game',
+      path: '/friend',
+    },{
+      id: 10,
+      name: "math",
+      description: "A forum for gaaaaaaamers to discuss strategies and new releases.",
+      thumbnailUrl: "https://picsum.photos/seed/gaming/600/400",
+      category: 'Game',
+      path: '/math',
+    },
+
+
+
+
   ]);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
