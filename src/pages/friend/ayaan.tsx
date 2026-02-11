@@ -3,6 +3,7 @@ import React, { useState, useEffect, useMemo } from 'react';
 import { SocialFriend, RelationshipType } from '../../../types';
 import AddFriendModal from './components/AddFriendModal';
 import FriendCard from './components/FriendCard';
+import FullscreenContainer from '../../../components/FullscreenContainer';
 
 const App: React.FC = () => {
   const [friends, setFriends] = useState<SocialFriend[]>([]);
@@ -52,7 +53,8 @@ const App: React.FC = () => {
   }, [friends, searchTerm, activeFilter]);
 
   return (
-    <div className="min-h-screen pb-20 bg-slate-50">
+    <FullscreenContainer>
+      <div className="min-h-screen pb-20 bg-slate-50">
       {/* Header */}
       <header className="bg-white border-b sticky top-0 z-40 backdrop-blur-sm bg-white/80">
         <div className="max-w-4xl mx-auto px-4 py-4 flex flex-col md:flex-row md:items-center justify-between gap-4">
@@ -150,7 +152,8 @@ const App: React.FC = () => {
         onClose={() => setIsModalOpen(false)}
         onAdd={handleAddFriend}
       />
-    </div>
+      </div>
+    </FullscreenContainer>
   );
 };
 

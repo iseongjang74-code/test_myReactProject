@@ -4,6 +4,7 @@ import { GameCanvas } from './components/GameCanvas';
 import { UIOverlay } from './components/UIOverlay';
 import { GameState, KeyConfig } from '../../../types';
 import { DEFAULT_KEY_CONFIG } from './constants';
+import FullscreenContainer from '../../../components/FullscreenContainer';
 
 export default function joshua() {
   const [gameState, setGameState] = useState<GameState>('MENU');
@@ -32,7 +33,8 @@ export default function joshua() {
   const handleRestart = () => setGameState('PLAYING'); // Logic handled in canvas mount
 
   return (
-    <div className="relative w-screen h-screen bg-slate-950 flex items-center justify-center overflow-hidden select-none">
+    <FullscreenContainer>
+      <div className="relative w-screen h-screen bg-slate-950 flex items-center justify-center overflow-hidden select-none">
       {/* Visual Effects Layer */}
       {/* Reduced intensity from opacity-30 to opacity-20 (approx 70%) */}
       <div className="scanlines mix-blend-overlay opacity-20 pointer-events-none w-full h-full absolute inset-0 z-50" />
@@ -59,6 +61,7 @@ export default function joshua() {
           setKeyBindings={setKeyBindings}
         />
       </div>
-    </div>
+      </div>
+    </FullscreenContainer>
   );
 }

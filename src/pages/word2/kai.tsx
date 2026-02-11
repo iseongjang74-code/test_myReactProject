@@ -4,6 +4,7 @@ import { FileUpload } from './components/FileUpload';
 import { BlockCard } from './components/BlockCard';
 import { StudyMode } from './components/StudyMode';
 import { BookOpen, Settings } from 'lucide-react';
+import FullscreenContainer from '../../../components/FullscreenContainer';
 
 const BLOCK_SIZE = 10;
 
@@ -57,7 +58,8 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col max-w-md mx-auto bg-[#F0F4F8] relative shadow-2xl">
+    <FullscreenContainer>
+      <div className="min-h-screen flex flex-col max-w-md mx-auto bg-[#F0F4F8] relative shadow-2xl">
       
       {/* App Header (Sticky) */}
       <header className="bg-white/80 backdrop-blur-md sticky top-0 z-10 px-6 py-4 flex justify-between items-center border-b border-slate-100">
@@ -123,7 +125,8 @@ const App: React.FC = () => {
         )}
 
       </main>
-    </div>
+      </div>
+    </FullscreenContainer>
   );
 };
 

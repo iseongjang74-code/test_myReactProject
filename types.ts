@@ -172,12 +172,6 @@ export interface KeyConfig {
   INTERACT: string;
   FLASHLIGHT: string;
 }
-
-export interface Point {
-  x: number;
-  y: number;
-}
-
 export interface Entity {
   id: string;
   type: EntityType;
@@ -347,4 +341,170 @@ export interface PuzzleGenerationResponse {
   correctAnswer: string;
   hint: string;
   explanation: string;
+}
+export enum UserLevel {
+  BEGINNER = 'Beginner',
+  INTERMEDIATE = 'Intermediate',
+  ADVANCED = 'Advanced',
+  EXPERT = 'Expert'
+}
+
+export interface VocabularyWord {
+  word: string;
+  phonetic: string;
+  definition: string;
+  koreanTranslation: string;
+  exampleSentence: string;
+  synonyms: string[];
+  usageTip: string;
+}
+
+export interface UserPreferences {
+  level: UserLevel;
+  interests: string[];
+}
+
+export interface AudioState {
+  isPlaying: boolean;
+  currentWord: string | null;
+}
+
+export type Point = {
+  x: number;
+  y: number;
+};
+
+export enum Direction {
+  UP = 'UP',
+  DOWN = 'DOWN',
+  LEFT = 'LEFT',
+  RIGHT = 'RIGHT'
+}
+
+export enum GameStatus {
+  IDLE = 'IDLE',
+  PLAYING = 'PLAYING',
+  PAUSED = 'PAUSED',
+  GAME_OVER = 'GAME_OVER'
+}
+
+export interface SnakeGameState {
+  snake: Point[];
+  food: Point;
+  direction: Direction;
+  score: number;
+  highScore: number;
+  status: 'IDLE' | 'PLAYING' | 'PAUSED' | 'GAME_OVER';
+  speed: number;
+  level: number;
+}
+
+export interface AICommentary {
+  message: string;
+  rank: string;
+}
+
+export enum AppState {
+  HOME = 'HOME',
+  MODE_SELECT = 'MODE_SELECT',
+  CLASSIC_LEVELS = 'CLASSIC_LEVELS',
+  AI_CUSTOM_INPUT = 'AI_CUSTOM_INPUT',
+  GAME = 'GAME',
+  REPORT = 'REPORT',
+  HISTORY = 'HISTORY',
+  GUIDE = 'GUIDE'
+}
+
+export enum GameMode {
+  CLASSIC = 'CLASSIC',
+  AI_CUSTOM = 'AI_CUSTOM'
+}
+
+export interface Marker {
+  x: number;
+  y: number;
+  id: number;
+}
+
+export interface FocusStats {
+  mode: GameMode;
+  level?: number;
+  startTime: number;
+  endTime?: number;
+  foundCount: number;
+  totalRequired: number;
+  success: boolean;
+  accuracy: number;
+}
+
+export interface GameAssets {
+  originalImage: string;
+  modifiedImage: string;
+  differencesDescription: string[];
+}
+export interface AudioAssets {
+  backgroundMusic: string;
+  soundEffects: Record<string, string>;
+}
+
+export interface LevelData {
+  level: number;
+  differences: Marker[];
+  timeLimitSec: number;
+}
+
+export interface LevelsConfig {
+  classicLevels: LevelData[];
+  aiCustom: {
+    timeLimitSec: number;
+  };
+}export type AssetType = 'STOCK' | 'COIN';
+
+export interface Asset {
+  symbol: string;
+  name: string;
+  type: AssetType;
+  price: number;
+  change: number;
+  changePercent: number;
+  history: PricePoint[];
+  sentiment: number; // -1.0 ~ 1.0
+}
+
+export interface PricePoint {
+  time: string;
+  price: number;
+}
+
+export interface Holding {
+  symbol: string;
+  name: string;
+  type: AssetType;
+  quantity: number;
+  averagePrice: number;
+}
+
+export interface Transaction {
+  id: string;
+  symbol: string;
+  name: string;
+  type: 'BUY' | 'SELL';
+  assetType: AssetType;
+  quantity: number;
+  price: number;
+  timestamp: Date;
+}
+
+export interface UserPortfolio {
+  balance: number;
+  holdings: Holding[];
+  transactions: Transaction[];
+}
+
+export interface MarketNews {
+  id: string;
+  title: string;
+  symbol: string; // 'MARKET', 'CRYPTO', 또는 특정 기호
+  sentiment: number;
+  timestamp: Date;
 }

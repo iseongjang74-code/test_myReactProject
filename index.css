@@ -1,0 +1,230 @@
+/* Ghibli Studio Style - Global Styles */
+
+:root {
+  /* Ghibli Color Palette */
+  --ghibli-primary: #f5e6d3;
+  --ghibli-accent: #e8b4a8;
+  --ghibli-green: #a8d8a8;
+  --ghibli-blue: #a8d4e8;
+  --ghibli-peach: #f5d5b8;
+  --ghibli-lavender: #d4b8e8;
+  --ghibli-cream: #fefaf0;
+  --ghibli-text: #4a4a4a;
+  --ghibli-light-text: #6b6b6b;
+  --ghibli-border: #d4c5b9;
+  --ghibli-shadow: rgba(0, 0, 0, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', 'Trebuchet MS', 'Comic Sans MS', cursive, sans-serif;
+  width: 100%;
+}
+
+body {
+  background: linear-gradient(135deg, var(--ghibli-cream) 0%, var(--ghibli-peach) 50%, var(--ghibli-blue) 100%);
+  color: var(--ghibli-text);
+  line-height: 1.6;
+  min-height: 100vh;
+  /* 게임 페이지 스크롤 버그 방지 */
+  overflow: auto;
+}
+
+/* Tailwind Override with Ghibli Colors */
+.bg-slate-100 {
+  background: var(--ghibli-cream) !important;
+}
+
+.bg-slate-900 {
+  background: linear-gradient(135deg, #6b5d54 0%, #7a6d64 100%) !important;
+}
+
+/* Smooth Rounded Corners */
+button, input, textarea, select, .card, .modal, .btn {
+  border-radius: 16px !important;
+}
+
+/* Button Styles - Ghibli */
+button, [role="button"] {
+  background: linear-gradient(135deg, var(--ghibli-green) 0%, var(--ghibli-accent) 100%);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px var(--ghibli-shadow);
+  border-radius: 16px;
+}
+
+button:hover, [role="button"]:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+button:active, [role="button"]:active {
+  transform: translateY(0);
+}
+
+/* Input Fields */
+input, textarea, select {
+  background: var(--ghibli-cream);
+  border: 2px solid var(--ghibli-border);
+  color: var(--ghibli-text);
+  padding: 12px 16px;
+  font-family: inherit;
+  transition: all 0.3s ease;
+  border-radius: 12px;
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: var(--ghibli-accent);
+  box-shadow: 0 0 0 3px rgba(232, 180, 168, 0.1);
+}
+
+/* Card Styles */
+.card, [class*="Card"] {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(245, 230, 211, 0.9) 100%);
+  border: 2px solid var(--ghibli-border);
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 8px 24px var(--ghibli-shadow);
+  transition: all 0.3s ease;
+}
+
+.card:hover, [class*="Card"]:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+}
+
+/* Modal Styles */
+.modal, [class*="Modal"] {
+  background: linear-gradient(135deg, var(--ghibli-cream) 0%, var(--ghibli-peach) 100%);
+  border: 3px solid var(--ghibli-border);
+  border-radius: 24px;
+  padding: 32px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+/* Header & Navigation */
+header, nav, [class*="Header"], [class*="Nav"] {
+  background: linear-gradient(90deg, var(--ghibli-green) 0%, var(--ghibli-blue) 100%);
+  color: white;
+  padding: 16px 24px;
+  box-shadow: 0 4px 12px var(--ghibli-shadow);
+  border-radius: 0 0 20px 20px;
+}
+
+header h1, nav h1 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 600;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer */
+footer, [class*="Footer"] {
+  background: linear-gradient(90deg, var(--ghibli-blue) 0%, var(--ghibli-green) 100%);
+  color: white;
+  padding: 24px;
+  text-align: center;
+  border-radius: 20px 20px 0 0;
+  margin-top: 40px;
+}
+
+/* Text Styling */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--ghibli-text);
+  font-weight: 600;
+}
+
+p {
+  color: var(--ghibli-light-text);
+}
+
+/* Links */
+a {
+  color: var(--ghibli-accent);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--ghibli-green);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--ghibli-cream);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--ghibli-green);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--ghibli-accent);
+}
+
+/* Smooth Animations */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Glow Effects for Special Elements */
+[class*="highlight"], [class*="special"], [class*="featured"] {
+  background: linear-gradient(135deg, var(--ghibli-green) 0%, var(--ghibli-blue) 100%);
+  color: white;
+  border-radius: 16px;
+  padding: 16px 24px;
+  box-shadow: 0 4px 12px rgba(168, 216, 168, 0.3);
+}
+
+/* Badge Styles */
+.badge, [class*="Badge"] {
+  background: linear-gradient(135deg, var(--ghibli-accent) 0%, var(--ghibli-peach) 100%);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  button, input, textarea, select {
+    padding: 10px 16px;
+    font-size: 16px;
+  }
+
+  .card, [class*="Card"] {
+    padding: 16px;
+  }
+
+  header, nav {
+    padding: 12px 16px;
+  }
+
+  header h1, nav h1 {
+    font-size: 24px;
+  }
+}

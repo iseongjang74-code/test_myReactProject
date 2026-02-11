@@ -5,6 +5,7 @@ import { StudyMode } from './components/StudyMode';
 import { RecallTest } from './components/RecallTest';
 import { audioService } from './services/audioService';
 import { Trophy, Repeat, Sparkles, Home, Flame } from 'lucide-react';
+import FullscreenContainer from '../../../components/FullscreenContainer';
 
 const CHUNK_SIZE = 10;
 
@@ -117,8 +118,9 @@ const App: React.FC = () => {
   const displayStartIndex = currentSet?.id === 999 ? 1 : (currentSet?.id || 0) + 1;
 
   return (
-    <div className="min-h-screen bg-slate-50 flex items-center justify-center font-sans">
-      <div className="w-full max-w-lg h-screen md:h-[850px] bg-white md:rounded-[2.5rem] shadow-2xl overflow-hidden relative flex flex-col">
+    <FullscreenContainer>
+      <div className="min-h-screen bg-slate-50 flex items-center justify-center font-sans">
+        <div className="w-full max-w-lg h-screen md:h-[850px] bg-white md:rounded-[2.5rem] shadow-2xl overflow-hidden relative flex flex-col">
         
         {/* Top Bar */}
         {mode !== AppMode.HOME && (
@@ -209,9 +211,9 @@ const App: React.FC = () => {
         </div>
         
         {/* Bottom Deco */}
-        <div className="h-2 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500" />
+        </div>
       </div>
-    </div>
+    </FullscreenContainer>
   );
 };
 

@@ -5,6 +5,7 @@ import { EVENT_DURATION_MS, COUNTRIES, MAX_LEVEL } from './constants';
 import CountrySelector from './components/CountrySelector';
 import MainGame from './components/MainGame';
 import EventEnd from './components/EventEnd';
+import FullscreenContainer from '../../../components/FullscreenContainer';
 
 const App: React.FC = () => {
   const [userCountry, setUserCountry] = useState<string | null>(null);
@@ -168,19 +169,21 @@ const App: React.FC = () => {
   }
 
   return (
-    <MainGame
-      userCountry={userCountry}
-      userClicks={userClicks}
-      leaderboard={leaderboard}
-      timeLeft={timeLeft}
-      onIncrement={handleIncrement}
-      autoClickTier={autoClickTier}
-      onPurchaseTier={handlePurchaseTier}
-      isGodModeActive={isGodModeActive}
-      onToggleGodMode={handleToggleGodMode}
-      isAutoClickEnabled={isAutoClickEnabled}
-      onToggleAutoClick={handleToggleAutoClick}
-    />
+    <FullscreenContainer>
+      <MainGame
+        userCountry={userCountry}
+        userClicks={userClicks}
+        leaderboard={leaderboard}
+        timeLeft={timeLeft}
+        onIncrement={handleIncrement}
+        autoClickTier={autoClickTier}
+        onPurchaseTier={handlePurchaseTier}
+        isGodModeActive={isGodModeActive}
+        onToggleGodMode={handleToggleGodMode}
+        isAutoClickEnabled={isAutoClickEnabled}
+        onToggleAutoClick={handleToggleAutoClick}
+      />
+    </FullscreenContainer>
   );
 };
 

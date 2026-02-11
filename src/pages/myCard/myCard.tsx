@@ -1,6 +1,7 @@
 
 import React from 'react';
 import IntroductionCard from './components/IntroductionCard';
+import FullscreenContainer from '../../../components/FullscreenContainer';
 
 const myCard: React.FC = () => {
   const userProfile = {
@@ -11,14 +12,16 @@ const myCard: React.FC = () => {
   };
 
   return (
-    <main className="bg-slate-100 min-h-screen flex items-center justify-center p-4 font-sans">
-      <IntroductionCard
-        name={userProfile.name}
-        likes={userProfile.likes}
-        motto={userProfile.motto}
-        imageUrl={userProfile.imageUrl}
-      />
-    </main>
+    <FullscreenContainer>
+      <main className="bg-slate-100 min-h-screen flex items-center justify-center p-4 font-sans">
+        <IntroductionCard
+          name={userProfile.name}
+          likes={userProfile.likes}
+          motto={userProfile.motto}
+          imageUrl={userProfile.imageUrl}
+        />
+      </main>
+    </FullscreenContainer>
   );
 };
 

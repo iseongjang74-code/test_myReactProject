@@ -12,6 +12,7 @@ import ShopScreen from './components/ShopScreen.tsx';
 import GuildScreen from './components/GuildScreen.tsx';
 import CombatScreen from './components/CombatScreen.tsx';
 import RaidCombatScreen from './components/RaidCombatScreen.tsx';
+import FullscreenContainer from '../../../components/FullscreenContainer.tsx';
 
 import { HomeIcon, GachaIcon, TeamIcon, BattleIcon, SocialIcon, ShopIcon, GuildIcon } from './components/icons/index.ts';
 
@@ -311,7 +312,7 @@ const App: React.FC = () => {
     };
 
     return (
-        <div className="min-h-screen bg-gray-900 text-white font-sans selection:bg-cyan-500 selection:text-white pb-20 md:pb-0">
+        <FullscreenContainer className="min-h-screen bg-gray-900 text-white font-sans selection:bg-cyan-500 selection:text-white pb-20 md:pb-0">
              <div className="max-w-2xl mx-auto min-h-screen bg-gray-900 shadow-2xl overflow-hidden relative">
                 <main className="p-4 pb-24">
                     {renderScreen()}
@@ -340,7 +341,7 @@ const App: React.FC = () => {
                     </nav>
                 )}
              </div>
-        </div>
+        </FullscreenContainer>
     );
 };
 

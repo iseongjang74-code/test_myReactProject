@@ -25,26 +25,29 @@ const CardInner: React.FC<{ website: Website; onDelete: (id: number) => void }> 
   };
 
   return (
-    <div className="bg-white dark:bg-slate-800 rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 ease-in-out flex flex-col">
+    <div className="rounded-3xl shadow-lg overflow-hidden transform hover:-translate-y-3 transition-all duration-300 ease-in-out flex flex-col"
+      style={{background: 'linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(245,230,211,0.9) 100%)', border: '2px solid #d4c5b9'}}>
       <img src={website.thumbnailUrl} alt={website.name} className="w-full h-48 object-cover" />
       <div className="p-6 flex flex-col flex-grow">
-        <h3 className="text-xl font-bold mb-2 text-slate-900 dark:text-white">{website.name}</h3>
-        <p className="text-slate-600 dark:text-slate-400 flex-grow mb-6">{website.description}</p>
-        <div className="mt-auto flex justify-end gap-2">
-          <button className="p-2 rounded-full text-slate-500 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors" aria-label="Visit site">
+        <h3 className="text-xl font-bold mb-2" style={{color: '#4a4a4a'}}>{website.name}</h3>
+        <p className="flex-grow mb-6" style={{color: '#6b6b6b'}}>{website.description}</p>
+        <div className="mt-auto flex justify-end gap-3">
+          <button className="p-2 rounded-full transition-all hover:bg-white hover:shadow-md" aria-label="Visit site" style={{color: '#a8d8a8'}}>
             <ExternalLinkIcon />
           </button>
           <button
             onClick={handleEditClick}
-            className="p-2 rounded-full text-slate-500 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors"
+            className="p-2 rounded-full transition-all hover:bg-white hover:shadow-md"
             aria-label="Edit site"
+            style={{color: '#a8d4e8'}}
           >
             <EditIcon />
           </button>
           <button
             onClick={handleDeleteClick}
-            className="p-2 rounded-full text-red-500 hover:bg-red-100 dark:hover:bg-red-900/50 transition-colors"
+            className="p-2 rounded-full transition-all hover:bg-white hover:shadow-md"
             aria-label="Delete site"
+            style={{color: '#e8b4a8'}}
           >
             <TrashIcon />
           </button>

@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { BusinessCard } from './components/BusinessCard';
+import FullscreenContainer from '../../../components/FullscreenContainer';
 
 const App: React.FC = () => {
   const cardDetails = {
@@ -11,14 +12,16 @@ const App: React.FC = () => {
   };
 
   return (
-    <main className="min-h-screen bg-slate-100 flex items-center justify-center font-sans p-4">
-      <BusinessCard
-        name={cardDetails.name}
-        status={cardDetails.status}
-        age={cardDetails.age}
-        motto={cardDetails.motto}
-      />
-    </main>
+    <FullscreenContainer>
+      <main className="min-h-screen bg-slate-100 flex items-center justify-center font-sans p-4">
+        <BusinessCard
+          name={cardDetails.name}
+          status={cardDetails.status}
+          age={cardDetails.age}
+          motto={cardDetails.motto}
+        />
+      </main>
+    </FullscreenContainer>
   );
 };
 

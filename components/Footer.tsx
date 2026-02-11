@@ -2,13 +2,13 @@ import React from 'react';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-white dark:bg-slate-800 shadow-inner mt-16">
-      <div className="container mx-auto px-4 py-6 text-center text-slate-500 dark:text-slate-400">
-        <p className="text-sm">
-          &copy; {new Date().getFullYear()} 기로뇽뇽. All rights reserved.
+    <footer className="mt-20 rounded-t-3xl" style={{background: 'linear-gradient(90deg, #a8d4e8 0%, #a8d8a8 100%)'}}>
+      <div className="container mx-auto px-4 py-10 text-center text-white">
+        <p className="text-sm font-medium">
+          &copy; {new Date().getFullYear()} Website Builder. All rights reserved.
         </p>
-        <p className="text-xs mt-2">
-          경기도 성남시 분당구 대장동 풍경채 어바니티 7단지
+        <p className="text-xs mt-3 text-white text-opacity-90">
+          With ✨ Ghibli Charm ✨
         </p>
       </div>
     </footer>
